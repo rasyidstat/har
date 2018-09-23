@@ -1,0 +1,50 @@
+---
+title: "Answers for Assessment of Data and Business Analytics Lab. Industrial & Management Engineering HUFS"
+author: "Muhammad Rasyid Ridha"
+date: "9/19/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Answer 1.a.
+
+*What do you know about supervised, unsupervised, and semi-supervised learning? How do they relate each other?*
+
+### Supervised learning
+
+Supervised learning is 
+
+There are two types of supervised learning: regression and classification. Regression is used when the target variable is continous, e.g. height, temperature, amount of sales, currency, etc. In other hand, classification is used when the target variable is categorical, e.g. gender, yes or no, class, etc. There are many techniques of supervised learning. 
+
+* Gender prediction
+* House price prediction
+* Estimated time prediction
+
+### Unsupervised learning
+
+### Semi-supervised learning
+
+Semi-supervised learning is the 
+
+## Answer 1.b.
+
+*What would be the best learning approach (in accordance to question 1.a.) to do activity recognition research if you have only two devices; smartphone and smartwatch?*
+
+It depends on the data that we collect. If the data has target label, the best approach is supervised learning.
+
+The best approach is to use supervised learning with available ground truth of the data. 
+
+Users who participate should label their own activity. 
+
+For example, like this one.
+
+Semi-supervised approach could be used also when the groud truth is not completely available. 
+
+
+
+
+
+

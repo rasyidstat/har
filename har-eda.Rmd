@@ -1,0 +1,46 @@
+---
+title: "EDA: Human Activity Recognition"
+author: "Author: Rasyid Ridha"
+output: 
+  html_document:
+    toc: true
+    toc_float: true 
+    df_print: paged
+    code_folding: hide
+    code_download: true
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE, 
+                      error = FALSE,
+                      fig.path = "figs/")
+```
+
+```{r}
+library(tidyverse)
+library(data.table)
+```
+
+```{r}
+har <- fread("data/selected_body_part.csv")
+har_extracted <- fread("data/extracted_vals.csv")
+har_extracted %>%
+  count(V271)
+har %>%
+  count(V46)
+```
+
+```{r eda}
+har %>%
+  group_by(V46) %>%
+  mutate(r = row_number()) %>%
+  ggplot(aes(r, V1)) +
+  geom_line() +
+  facet_wrap(~V46, scales = "free")
+```
+
+
+
