@@ -1,4 +1,6 @@
 data/*
 !data/.gitkeep
-reference/
+reference/*
+!reference/.gitkeep
+!reference/_reference.bib
 .Rproj.user
