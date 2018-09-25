@@ -1,7 +1,7 @@
 ---
 title: "Answers for Assessment of Data and Business Analytics Lab. Industrial & Management Engineering HUFS"
 author: "Muhammad Rasyid Ridha"
-date: "9/19/2018"
+date: "19 September 2018"
 output: pdf_document
 ---
 
@@ -13,37 +13,49 @@ knitr::opts_chunk$set(echo = TRUE)
 
 *What do you know about supervised, unsupervised, and semi-supervised learning? How do they relate each other?*
 
-### Supervised learning
+Supervised learning is a type of machine learning where the target variable (also known as dependent, response or outcome variable) is available. Most of machine learning problem is supervised learning. The purpose is to predict the target variable given the predictor variables (also known as features, independent or input variable) by training the data.
 
-Supervised learning is 
-
-There are two types of supervised learning: regression and classification. Regression is used when the target variable is continous, e.g. height, temperature, amount of sales, currency, etc. In other hand, classification is used when the target variable is categorical, e.g. gender, yes or no, class, etc. There are many techniques of supervised learning. 
+There are two types of supervised learning: regression and classification. Regression is used when the target variable is continous, e.g. height, temperature, amount of sales, currency, etc. In other hand, classification is used when the target variable is categorical, e.g. gender, yes or no, class, etc. There are many techniques of supervised learning algorithm. The popular one are regression-based and tree-based algorithm. Some use case examples of supervised learning problems are:
 
 * Gender prediction
 * House price prediction
-* Estimated time prediction
+* Credit scoring
+* Demand forecasting
+* Churn prediction
+* Image classification
 
-### Unsupervised learning
+In other hand, when the target variable is not exist or unknown, unsupervised learning can be used. The purpose is for exploratory data analysis, group similar data, features generation and understand the hidden pattern of the data. It will form clusters from the data based on similarity or dissimilarity metrics. 
 
-### Semi-supervised learning
+The popular unsupervised learning technique are k-means and hierarchical clustering. When using k-means, user needs to specify number of clusters based on the context, problems, purpose and business understanding. Different with k-means, hierarchical clustering does not require number of clusters. Some use case examples of unsupervised learning problems are:
 
-Semi-supervised learning is the 
+* Customer segmentation
+* Text clustering
+* Geospatial clustering
+
+Supervised and unsupervised learning can be related each others. For example, we can find clusters from the data using unsupervised learning algorithm and use the clusters as the target variable that will be predicted using supervised learning classification algorithm. 
+
+In addition, unsupervised learning can be used as features generation or data preprocessing that might be useful to improve prediction result of a supervised learning problem. 
+
+The combination between supervised and unsupervised learning is semi-supervised learning. It is a class of supervised learning that can be used when the target variable has very limited labeled data by utilizing unsupervised learning to generate clusters or pseudo-label of the data. 
+
+In a real application, labeling the data can be expensive and unlabeled data can be obtained easily. Semi-supervised learning technique can be used to tackle this limitation with careful assumptions and sufficient samples of data.
 
 ## Answer 1.b.
 
 *What would be the best learning approach (in accordance to question 1.a.) to do activity recognition research if you have only two devices; smartphone and smartwatch?*
 
-It depends on the data that we collect. If the data has target label, the best approach is supervised learning.
+It depends on the data that we collect. If the data has target label, it is clear that the best learning approach is supervised learning. It is a classification problem with multiclass target variable. 
 
-The best approach is to use supervised learning with available ground truth of the data. 
+Using only smartphone and smartwatch, it is possible to label the activity of the user manually. There are some android apps that can be used to log activity. One of the open-source apps can be used via this [link](https://github.com/nlathia/pydata_2016/tree/master/App/AccelerometerCollector). 
 
-Users who participate should label their own activity. 
+However, sometimes the target label is not exist. In this case, the label of activity is not exist. Hence, using unsupervised or semi-supervised learning approach can be the alternative. Unsupervised learning can be used to identifying hidden pattern from the data. In addition, when we have very limited target label, we can use semi-supervised approach.
 
-For example, like this one.
+In the end, even though we use unspervised or semi-supervised learning, the purpose is stay same
 
-Semi-supervised approach could be used also when the groud truth is not completely available. 
+## Reference
 
-
+* The Elements of Statistical Learning
+* An Introduction to Statistical Learning
 
 
 
