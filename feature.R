@@ -16,10 +16,9 @@ for (i in 1:((ncol(har_raw)-1)/3) ) {
 }
 
 # features extraction using window size = 2s (60 data), sliding window = 1s (30 data)
-# just use basic stats summary -> min, max, std, median
+# just use basic stats summary -> min, max, std, median, kurtosis, skewness
 window <- 60
 slide <- 30
-
 
 
 
