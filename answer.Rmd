@@ -1,7 +1,7 @@
 ---
 title: "Answers for Assessment of Data and Business Analytics Lab. Industrial & Management Engineering HUFS"
 author: "Muhammad Rasyid Ridha"
-date: "19 September 2018"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
 output: pdf_document
 bibliography: reference/_reference.bib
 ---
@@ -55,7 +55,29 @@ In the end, even though we use unspervised or semi-supervised learning, the purp
 
 ## Answer 2.a
 
+Features extraction
+
 ## Answer 2.b
+
+The modeling is done using R with new currently developed machine learning package, `tidymodels`, created by @max. The steps of reproducing the result are: 
+
+1. Install R, RStudio and dependency of packages using `install_pkg.R`
+2. Run `model.R` to preprocess, split train and test data, train the data and save the model and prediction in the `output` folder. The algorithm used in `model.R` is linear SVM.
+
+3. Run `eval.R` to see the evaluation metrics (accuracy and F1-score) by running this in terminal.
+
+```{}
+      $ Rscript eval.R
+```
+
+### Notes
+
+The answer presented here is the simple one. There are many ways to improve the model, such as:
+
+1. Experiment with different features extraction (dimension reduction, different sliding window, clustering)
+2. Try different models
+3. Tune hyperparameters
+4. Use cross-validation for more robust evaluation metrics
 
 ## References
 

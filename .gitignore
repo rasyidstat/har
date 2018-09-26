@@ -1,6 +1,9 @@
 data/*
+playground/*
 !data/.gitkeep
 reference/*
 !reference/.gitkeep
 !reference/_reference.bib
 .Rproj.user
+.Rhistory
+*.ipynb
