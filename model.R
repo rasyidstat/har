@@ -15,9 +15,9 @@ har_rec <- recipe(V271 ~ ., data = har) %>%
   step_scale(all_predictors())
 har_scaled <- prep(har_rec, training = har, retain = TRUE)
 
-# train-test splitting (75:25, stratified)
+# train-test splitting (80:20, stratified)
 set.seed(2019)
-har_split <- initial_split(har, prop = 0.75, strata = "V271")
+har_split <- initial_split(har, prop = 0.8, strata = "V271")
 har_train <- bake(har_scaled, training(har_split))
 har_test <- bake(har_scaled, testing(har_split))
 

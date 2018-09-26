@@ -16,13 +16,21 @@ knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE,
                       warning = FALSE, 
                       error = FALSE,
-                      fig.path = "figs/")
+                      fig.path = "output/")
 ```
 
 ```{r}
 library(tidyverse)
 library(data.table)
+library(hrbrthemes)
+theme_set(theme_ipsum())
 ```
+
+This notebook is used for exploration and playground arena.
+
+* There are 5 sensors of data captured in the dataset. Each 30sensors have 3 measurements. Each measurements have 3 metrics (x, y, z). There are 45 features.
+
+* 30 data points for every 1 second
 
 ```{r}
 har <- fread("data/selected_body_part.csv")
@@ -33,13 +41,19 @@ har %>%
   count(V46)
 ```
 
-```{r eda}
+```{r eda, fig.width=8, fig.height=12}
 har %>%
   group_by(V46) %>%
   mutate(r = row_number()) %>%
+  ungroup() %>%
+  mutate(V46 = case_when(V46 == 101 ~ paste0(V46, "-Relaxing"),
+                         V46 == 102 ~ paste0(V46, "-Coffee time"),
+                         V46 == 103 ~ paste0(V46, "-Early morning activity"),
+                         V46 == 104 ~ paste0(V46, "-Cleanup"),
+                         V46 == 105 ~ paste0(V46, "-Sandwich time"))) %>%
   ggplot(aes(r, V1)) +
   geom_line() +
-  facet_wrap(~V46, scales = "free")
+  facet_wrap(~V46, scales = "free", ncol = 1)
 ```
 
 

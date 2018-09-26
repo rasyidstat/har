@@ -55,7 +55,11 @@ In the end, even though we use unspervised or semi-supervised learning, the purp
 
 ## Answer 2.a
 
-Features extraction
+Deciding window size that will be used for human activity recognition task is not an easy task since there is no standard guideline in choosing the best window size. It also depends on the class of the activity and how the data are collected. 
+
+There are many researches and literatures focusing in features extraction of human activity recognition. Based on the article written by @banos, decreasing the window size allows for a faster activity detection, as well as reduced resources and energy needs while large window size is used for the recognition of complex activities. 
+
+We will try using 2 seconds window size and 1 second sliding window that can be run via `feature.R`.
 
 ## Answer 2.b
 
@@ -74,7 +78,7 @@ The modeling is done using R with new currently developed machine learning packa
 
 The answer presented here is the simple one. There are many ways to improve the model, such as:
 
-1. Experiment with different features extraction (dimension reduction, different sliding window, clustering)
+1. Experiment with different features extraction (dimension reduction, different sliding window and window size, clustering for preprocessing)
 2. Try different models
 3. Tune hyperparameters
 4. Use cross-validation for more robust evaluation metrics
