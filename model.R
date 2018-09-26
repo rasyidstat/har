@@ -1,20 +1,31 @@
 library(tidymodels)
 library(tidyverse)
+<<<<<<< HEAD
 library(data.table)
 library(e1071)
 library(glue)
+=======
+library(caret)
+library(data.table)
+library(e1071)
+>>>>>>> 95ba810a8c9b49ab5667470c3dc0caebad40a3ab
 
 # read data
 har <- fread("data/extracted_vals.csv")
 har <- har %>%
   mutate(V271 = as.factor(V271))
 
+<<<<<<< HEAD
 # preprocess (Z normalization)
+=======
+# preprocess
+>>>>>>> 95ba810a8c9b49ab5667470c3dc0caebad40a3ab
 har_rec <- recipe(V271 ~ ., data = har) %>%
   step_center(all_predictors()) %>%
   step_scale(all_predictors())
 har_scaled <- prep(har_rec, training = har, retain = TRUE)
 
+<<<<<<< HEAD
 # train-test splitting (75:25, stratified)
 set.seed(2019)
 har_split <- initial_split(har, prop = 0.75, strata = "V271")
@@ -48,8 +59,3 @@ write_rds(res, "output/prediction_svm.rds")
 
 # write session info (for reproducibility)
 writeLines(capture.output(sessionInfo()), glue("output/session_info_{format(Sys.Date(), '%Y%m%d')}.txt"))
-
-
-
-
-
